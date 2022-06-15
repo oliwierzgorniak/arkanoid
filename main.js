@@ -1,10 +1,6 @@
 "use strict";
 import Board from "./js/board/Board.js";
-import BlocksSelector from "./js/BlocksSelector.js";
-
-// handlers
-// import mousedown from "./js/board/functions/eventHandlers/functions/mousedown.js";
-// import mousemove from "./js/board/functions/eventHandlers/functions/mousemove.js";
+import BlocksSelector from "./js/blockSelector/BlocksSelector.js";
 
 import EventHandlers from "./js/board/functions/eventHandlers/EventHandlers.js";
 
@@ -25,9 +21,7 @@ const blocksSelector = new BlocksSelector();
 // handling block click
 const blockElements = document.querySelectorAll("[data-block]");
 blockElements.forEach((block) => {
-  block.addEventListener("click", (e) =>
-    board.handleBlockClick(e, blocksSelector.selectedColor)
-  );
+  block.addEventListener("click", EventHandlers.click);
 });
 
 // handling select

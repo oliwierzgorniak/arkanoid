@@ -1,8 +1,8 @@
 :root {
   --columns: 20;
   --rows: 20;
-  --block-height: 30px;
-  --block-width: 40px;
+  --block-height: 46px;
+  --block-width: 82px;
   --block-border: 1px solid white;
 }
 

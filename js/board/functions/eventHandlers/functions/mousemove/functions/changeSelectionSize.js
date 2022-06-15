@@ -12,6 +12,8 @@ function changeSelectionSize(e) {
 
   selection.style.height = `${Math.abs(ySize)}px`;
   selection.style.width = `${Math.abs(xSize)}px`;
+
+  saveCorners();
 }
 
 function setPositionProps(ySize, xSize) {
@@ -36,6 +38,33 @@ function setPositionProps(ySize, xSize) {
     selection.style.right = "unset";
     selection.style.left = `${BoardData.selectionPosition.x}px`;
   }
+}
+
+function saveCorners() {
+  BoardData.selectionCorners = [];
+
+  const selection = document.querySelector("#selection");
+
+  const corner1 = { y: selection.offsetTop, x: selection.offsetLeft };
+  BoardData.selectionCorners.push(corner1);
+
+  const corner2 = {
+    y: selection.offsetTop,
+    x: selection.offsetLeft + selection.offsetWidth,
+  };
+  BoardData.selectionCorners.push(corner2);
+
+  const corner3 = {
+    y: selection.offsetTop + selection.offsetHeight,
+    x: selection.offsetLeft + selection.offsetWidth,
+  };
+  BoardData.selectionCorners.push(corner3);
+
+  const corner4 = {
+    y: selection.offsetTop + selection.offsetHeight,
+    x: selection.offsetLeft,
+  };
+  BoardData.selectionCorners.push(corner4);
 }
 
 export default changeSelectionSize;

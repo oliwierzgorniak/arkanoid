@@ -7,8 +7,8 @@ class Dynamic {
     this.blocks = this.initializeBlocksArray(BoardData.height, BoardData.width);
     this.isSelectionActive = false;
     this.selectionPosition;
-    this.selectionResizeTime1;
-    this.selectionResizeTime2;
+    this.selectionResizeTime;
+    this.selectionCorners = [];
   }
 
   initializeBlocksArray(height, width) {
