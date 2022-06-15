@@ -1,0 +1,40 @@
+/* grab disable source:  https://gist.github.com/msuchodolski/41c9338f3a732379dc570142826ed76e */
+*,
+*::after,
+*::before {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+  cursor: default;
+}
+
+:root {
+  --color1-backgorund: #006e7f;
+
+  /* https://colorhunt.co/palette/006e7ff8cb2eee5007b22727 */
+
+  --background: rgb(82, 82, 82);
+  --menuBackground: rgb(236, 109, 109);
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.screen-center {
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  transform: translateY(50%) translateX(50%);
+}
