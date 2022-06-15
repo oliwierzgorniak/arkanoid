@@ -5,6 +5,9 @@ class Dynamic {
     this.lastBoards = [];
     this.moveIndex;
     this.blocks = this.initializeBlocksArray(BoardData.height, BoardData.width);
+    this.selectedBlocks = [];
+
+    // selection
     this.isSelectionActive = false;
     this.selectionPosition;
     this.selectionResizeTime;

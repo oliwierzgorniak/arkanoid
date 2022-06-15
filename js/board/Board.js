@@ -12,7 +12,9 @@ class Board {
 
     for (let y = 0; y < BoardData.height; y++) {
       for (let x = 0; x < BoardData.width; x++) {
-        let blockElement = document.createElement("div");
+        let blockElement = document.createElement("canvas");
+        blockElement.width = BoardData.blockWidth;
+        blockElement.height = BoardData.blockHeight;
         blockElement.dataset.block = "";
         blockElement.dataset.x = x;
         blockElement.dataset.y = y;

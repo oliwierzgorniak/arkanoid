@@ -2,7 +2,8 @@
 import Board from "./js/board/Board.js";
 import BlocksSelector from "./js/blockSelector/BlocksSelector.js";
 
-import EventHandlers from "./js/board/functions/eventHandlers/EventHandlers.js";
+import BoardEventHandlers from "./js/board/functions/eventHandlers/BoardEventHandlers.js";
+import selectorBlockClick from "./js/blockSelector/functions/click.js";
 
 // handling board builder button click
 const boardBuilderButton = document.querySelector("#board-builder-button");
@@ -21,11 +22,17 @@ const blocksSelector = new BlocksSelector();
 // handling block click
 const blockElements = document.querySelectorAll("[data-block]");
 blockElements.forEach((block) => {
-  block.addEventListener("click", EventHandlers.click);
+  block.addEventListener("click", BoardEventHandlers.click);
+});
+
+// handling block click
+const selectorBlocks = document.querySelectorAll("[data-selector-block]");
+selectorBlocks.forEach((block) => {
+  block.addEventListener("click", selectorBlockClick);
 });
 
 // handling select
 const boardElement = document.querySelector("#board");
-boardElement.addEventListener("mousedown", EventHandlers.mousedown);
-boardElement.addEventListener("mousemove", EventHandlers.mousemove);
-boardElement.addEventListener("mouseup", EventHandlers.mouseup);
+boardElement.addEventListener("mousedown", BoardEventHandlers.mousedown);
+boardElement.addEventListener("mousemove", BoardEventHandlers.mousemove);
+boardElement.addEventListener("mouseup", BoardEventHandlers.mouseup);
