@@ -9,6 +9,7 @@ class Constant {
       "1px solid rgb(255, 255, 255)",
       `1px solid ${this.highlightColor}`,
     ];
+    this.blockFilters = ["none", "brightness(0.7)"];
   }
 }
 

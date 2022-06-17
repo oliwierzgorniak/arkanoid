@@ -19,11 +19,11 @@
 }
 
 #blocks-selector .block {
-  filter: brightness(0.5);
+  cursor: pointer;
 }
 
 #blocks-selector .block:hover {
-  filter: none;
+  filter: brightness(0.7);
 }
 
 #board {

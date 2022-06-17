@@ -35,4 +35,6 @@ selectorBlocks.forEach((block) => {
 const boardElement = document.querySelector("#board");
 boardElement.addEventListener("mousedown", BoardEventHandlers.mousedown);
 boardElement.addEventListener("mousemove", BoardEventHandlers.mousemove);
-boardElement.addEventListener("mouseup", BoardEventHandlers.mouseup);
+
+// handling deleting block
+addEventListener("keydown", BoardEventHandlers.keydown);
