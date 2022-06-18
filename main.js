@@ -20,21 +20,24 @@ const board = new Board();
 const blocksSelector = new BlocksSelector();
 
 // handling block click
-const blockElements = document.querySelectorAll("[data-block]");
-blockElements.forEach((block) => {
-  block.addEventListener("click", BoardEventHandlers.click);
-});
-
-// handling block click
 const selectorBlocks = document.querySelectorAll("[data-selector-block]");
 selectorBlocks.forEach((block) => {
   block.addEventListener("click", selectorBlockClick);
+});
+
+// handling block click
+const blockElements = document.querySelectorAll("[data-block]");
+blockElements.forEach((block) => {
+  block.addEventListener("click", function (e) {
+    BoardEventHandlers.click(e.target);
+  });
 });
 
 // handling select
 const boardElement = document.querySelector("#board");
 boardElement.addEventListener("mousedown", BoardEventHandlers.mousedown);
 boardElement.addEventListener("mousemove", BoardEventHandlers.mousemove);
+boardElement.addEventListener("mouseup", BoardEventHandlers.mouseup);
 
 // handling deleting block
 addEventListener("keydown", BoardEventHandlers.keydown);

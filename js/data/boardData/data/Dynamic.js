@@ -11,7 +11,7 @@ class Dynamic {
     this.isSelectionActive = false;
     this.selectionPosition;
     this.selectionResizeTime;
-    this.selectionCorners = [];
+    this.currentSelectionBlocks = [];
   }
 
   initializeBlocksArray(height, width) {

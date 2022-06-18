@@ -4,6 +4,7 @@ function mousedown(e) {
   if (!e.ctrlKey) return;
 
   BoardData.isSelectionActive = true;
+
   let selection = document.createElement("div");
   selection.id = "selection";
   const y = e.pageY;

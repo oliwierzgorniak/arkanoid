@@ -1,5 +1,6 @@
 import BoardData from "../../../../../data/boardData/BoardData.js";
 import changeSelectionSize from "./functions/changeSelectionSize.js";
+import selectBlocks from "./functions/selectBlocks.js";
 
 function mousemove(e) {
   if (!e.ctrlKey || !BoardData.isSelectionActive) return;
@@ -10,6 +11,7 @@ function mousemove(e) {
   BoardData.selectionResizeTime = Date.now();
 
   changeSelectionSize(e);
+  selectBlocks();
 }
 
 export default mousemove;

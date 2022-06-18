@@ -1,13 +1,7 @@
 import BoardData from "../../../../data/boardData/BoardData.js";
 
-function click(e) {
-  let block = e.target;
-  const y = block.dataset.y;
-  const x = block.dataset.x;
-
-  BoardData.lastBoards.push(BoardData.blocks);
-  const index = BoardData.moveIndex;
-  BoardData.moveIndex = index ? index + 1 : 0;
+function click(block) {
+  if (block.hasAttribute("data-current")) return;
 
   handleSelectedBlocks(block);
 }
@@ -34,6 +28,8 @@ function handleSelectedBlocks(block) {
     block.style.border = BoardData.blockBorders[1];
     block.style.filter = BoardData.blockFilters[1];
   }
+
+  block.dataset.current = "";
 }
 
 export default click;
