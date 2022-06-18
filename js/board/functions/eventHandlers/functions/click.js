@@ -1,7 +1,7 @@
 import BoardData from "../../../../data/boardData/BoardData.js";
 
 function click(block) {
-  if (block.hasAttribute("data-current")) return;
+  if (block && block.hasAttribute("data-current")) return;
 
   handleSelectedBlocks(block);
 }
